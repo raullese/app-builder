@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-__version__ = '0.9.4'
+__version__ = '0.9.5'
 
 import os
 import sys
@@ -187,6 +187,7 @@ from .core._exception import (
     InternalServerErrorException,
     HTTPConnectionException,
     AppBuilderServerException,
+    AppbuilderTraceException,
 )
 
 from appbuilder.core.assistant.base import assistant
@@ -205,6 +206,7 @@ __all__ = [
     'InternalServerErrorException',
     'HTTPConnectionException',
     'AppBuilderServerException',
+    'AppbuilderTraceException',
     'AppbuilderTestToolEval',
     'AutomaticTestToolEval',
     "get_model_list",

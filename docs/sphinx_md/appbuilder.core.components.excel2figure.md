@@ -24,7 +24,7 @@ excel2figure 组件类
 
 #### meta
 
-[`Excel2FigureArgs`](#appbuilder.core.components.excel2figure.component.Excel2FigureArgs) 的别名
+`Excel2FigureArgs` 的别名
 
 #### model_info *: ModelInfo* *= None*
 
@@ -47,6 +47,14 @@ excel2figure 组件类
 
 #### set_secret_key_and_gateway(\*\*kwargs)
 
+设置密钥和网关地址。
+
+* **参数:**
+  * **secret_key** (*Optional* *[**str* *]* *,* *optional*) – 密钥，默认为None。如果未指定，则使用实例当前的密钥。
+  * **gateway** (*str* *,* *optional*) – 网关地址，默认为空字符串。如果未指定，则使用实例当前的网关地址。
+* **返回:**
+  None
+
 #### tool_eval(streaming: bool, origin_query: str, file_urls: dict, \*\*kwargs)
 
 对指定的Excel文件进行图表生成和评估。
@@ -66,42 +74,3 @@ excel2figure 组件类
 * **抛出:**
   * **ValueError** – 如果file_urls的长度不等于1，则抛出异常。
   * **RuntimeError** – 如果Excel文件到图表的转换失败或出现异常，则抛出异常。
-
-### *class* appbuilder.core.components.excel2figure.component.Excel2FigureArgs(\*, name: str = '', tool_desc: Dict[str, Any] = {}, query: Annotated[str, MaxLen(max_length=400)], excel_file_url: Url)
-
-基类：[`ComponentArguments`](appbuilder.core.md#appbuilder.core.component.ComponentArguments)
-
-excel2figure 的参数
-
-#### query
-
-str
-
-* **Type:**
-  str
-
-#### excel_file_url
-
-AnyUrl
-
-* **Type:**
-  pydantic_core._pydantic_core.Url
-
-#### excel_file_url *: Url*
-
-#### model_computed_fields *: ClassVar[dict[str, ComputedFieldInfo]]* *= {}*
-
-A dictionary of computed field names and their corresponding ComputedFieldInfo objects.
-
-#### model_config *: ClassVar[ConfigDict]* *= {}*
-
-Configuration for the model, should be a dictionary conforming to [ConfigDict][pydantic.config.ConfigDict].
-
-#### model_fields *: ClassVar[dict[str, FieldInfo]]* *= {'excel_file_url': FieldInfo(annotation=Url, required=True, description='用户的 excel 文件地址，需要是一个可被公网下载的 URL 地址'), 'name': FieldInfo(annotation=str, required=False, default=''), 'query': FieldInfo(annotation=str, required=True, description='用户的 query 输入', metadata=[MaxLen(max_length=400)]), 'tool_desc': FieldInfo(annotation=Dict[str, Any], required=False, default={})}*
-
-Metadata about the fields defined on the model,
-mapping of field names to [FieldInfo][pydantic.fields.FieldInfo].
-
-This replaces Model._\_fields_\_ from Pydantic V1.
-
-#### query *: str*
