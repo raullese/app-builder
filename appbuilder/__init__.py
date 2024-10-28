@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-__version__ = '0.9.5'
+__version__ = '0.9.6'
 
 import os
 import sys
@@ -113,7 +113,7 @@ from .core.components.plant_recognize.component import PlantRecognition
 from .core.components.handwrite_ocr.component import HandwriteOCR
 from .core.components.image_understand.component import ImageUnderstand
 from .core.components.mix_card_ocr.component import MixCardOCR
-
+from .core.components.document_understanding.component import DocumentUnderstanding
 __COMPONENTS__ = [
     "RagWithBaiduSearchPro",
     "RAGWithBaiduSearch",
@@ -163,6 +163,7 @@ __COMPONENTS__ = [
     "HandwriteOCR",
     "ImageUnderstand",
     "MixCardOCR",
+    "DocumentUnderstanding",
 ] # NOQA
 
 from appbuilder.core.message import Message
